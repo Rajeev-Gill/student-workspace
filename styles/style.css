@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.vid-container {
+  background: #000;
+  width: 100%;
+  height: 100%;
+}
+
+.notes-area {
+  width: 100%;
+  height: 97%;
+  background: green;
+  bottom: 0;
+  z-index: 3;
+  transition: transform .8s ease;
+}
+
+.notes-area.expanded {
+transform: translateY(-47%);
+}
+
+.navbar {
+  z-index: 3;
+}
+
+#classChat, #activityPortal {
+  position: absolute;
+  width: 300px;
+  background: yellow;
+  z-index: 2;
+  height: 100%;
+}
+
+#classChat {left: 0; transform: translatex(-300px); transition: transform 0.8s ease;}
+
+#activityPortal {right: 0; transform: translatex(300px); transition: transform 0.8s ease;}
+
+#classChat.open {transform: translateX(0);}
+
+#activityPortal.open {transform: translateX(0);}
+
+.chat-container, .activity-container {
+  width: 280px;
+  height: 80%;
+  background: grey;
+  margin: 70px 20px auto 20px;
+}
+
+
+.chat-container {margin-left: 0;}
+.activity-container {}
+
+#notes-button, #private-notes-button {
+  width: 230px;
+  height:60px;
+  display: inline-block;
+  background: #ffffff26;
+  color: #FFF;
+  border-radius: 50px;
+  padding: 5px;
+  position: relative;
+}
+
+#notes-button {bottom: 60px; left: 5%;}
+#private-notes-button {bottom: 60px; left: 55%;}
+
+#notes-button img, h4 {
+  display: inline-block;
+}
+
+#private-notes-button img, h4 {
+  display: inline-block;
+}
+
+.notes-area iframe  {
+  width: 100%;
+  height: 720px;
+  position: relative;
+  left: 0;
+  top: -60px;
+}
