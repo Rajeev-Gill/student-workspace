@@ -17,14 +17,16 @@ var handlers = { //Event Listeners
 }
 
 var view = { //DOM update methods
-
+  openChatSection: function(){
+      app.toggleClassOn(app.classChatSection, 'open');
+  }
 }
 
 
 //app.addClassTo(classChatSection, 'open')
 
 app.buttons.openChat.addEventListener('click', function(){
-  app.toggleClassOn(app.classChatSection, 'open');
+  view.openChatSection();
 });
 
 app.buttons.openActivities.addEventListener('click', function(){
