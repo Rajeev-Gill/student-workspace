@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Lets Learn: Student Workspace</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
 
 
@@ -33,7 +35,7 @@
     </div>
   </section>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <!--<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <ul class="nav navbar-nav navbar-left">
           <li id="classChatButton">Open Class Chat</li>
@@ -42,32 +44,112 @@
           <li id="activityPortalButton">Open Activity Portal</li>
         </ul>
       </div>
-    </nav>
+      <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+          <i class="glyphicon glyphicon-align-left"></i>
+          <span>Toggle Sidebar</span>
+      </button>
+    </nav>-->
 
-    <section class="video">
-      <div class="vid-container">
-        <iframe id="my-video" width="560" height="315" src="https://www.youtube.com/embed/NUMa0QkPzns?enablejsapi=1" frameborder="0"></iframe>
+    <section class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar">
+
+      <div class="chat-intro">
+        <div class="students-number"><img class="logo-blue" src="img/logo-blue.png" data-intro='Hello! Lets Learn is a a video based social learning platform'> Chat | 20 <img src="img/users.png"></div>
+        <div id="sidebarCollapse"><img src="img/sidebar-arrow.png"></div>
+      </div>
+      <div class="center" data-intro='This is the main feed, as the video is playing, additional information, excercises and tasks will be given to you and other class members'>
+        <button type="button" name="button">Richard completed a question</button>
+        <div class="live-webcam">
+          <img src="img/live-webcam.png">
+        </div>
+        <div class="users-chat">
+          <div class="user"><img src="img/user-chat-1.png"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></div>
+          <div class="user"><img src="img/user-chat-2.png"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></div>
+          <div class="user"><img src="img/user-chat-3.png"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></div>
+        </div>
+        <div class="text-area" data-intro='The class discussions are moderated by the educator. You will enter your responses here and they will be visible to either the teacher, the class or both'>
+          <textarea rows="4" cols="34">
+          Type a message...
+          </textarea>
+        </div>
+      </div>
+
+      </nav>
+
+      <!-- Sidebar Holder Ends -->
+
+      <!-- Page Content Holder -->
+
+      <div id="video-main">
+        <div id="video" class="vid-container">
+          <!--<div class="youtube-play"><img src="img/youtube-play.png"></div>-->
+          <iframe id="my-video" class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/NUMa0QkPzns?enablejsapi=1&autoplay=1&showinfo=0&controls=0&start=1" frameborder="0"></iframe>
+          <!--<div class="controls" class="display: none !important">
+            <button id="play-video">Play</button>
+          </div>-->
+
+            <div class="overlay" id="ov">
+              <h2>It’s not you. Phones are designed to be addicting.</h2>
+              <div class="educator">
+                <img src="img/educator-pic.jpeg">
+                <div class="details">
+                  <h3>Tristan Harris</h3>
+                  <span>Design Ethicist - Google</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="controls">
+              <div class="controls-info">
+                <img src="img/settings.png">
+                <img src="img/volume.png">
+              </div>
+              <div class="btns">
+                <div class="btns-content">
+                  <button id="shared-workspace" type="button" name="Shared Workspace">Open shared workspace</button>
+                  <button id="private-workspace" type="button" name="Private Workspace">Open private workspace</button>
+                </div>
+              </div>
+            </div> -->
+            <div id="showSidebar"><img src="img/show-sidebar.png">
+            </div>
+
+        </div>
       </div>
     </section>
 
-    <div class="notes-area">
-      <div id="notes-button">
+    <div id="notes-area">
+      <div class="controls">
+        <div class="controls-info">
+          <img src="img/settings.png">
+          <img src="img/volume.png">
+        </div>
+        <div class="btns">
+          <div class="btns-content">
+            <button id="shared-workspace" type="button" name="Shared Workspace" data-intro='Use these buttons to enter the workspace, here you can take notes on everything you earn and transfer them to a blog or export them in any format to any application'>Open shared workspace</button>
+            <button id="private-workspace" type="button" name="Private Workspace">Open private workspace</button>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="notes-button">
         <img src="img/google-docs.png">
         <h4>Take Notes</h4>
       </div>
       <div id="private-notes-button">
         <img src="img/google-docs.png">
         <h4>Take Notes (Private)</h4>
-      </div>
-      <iframe src="https://docs.google.com/document/d/1zvyKLEmbV821wqj4hBk1_eqhEI2utzvAUrs969ePfcY/edit?usp=sharingrm=minimal" frameborder="0"></iframe>
+      </div> -->
+      <iframe src="https://docs.google.com/document/d/1zvyKLEmbV821wqj4hBk1_eqhEI2utzvAUrs969ePfcY/edit?usp=sharingrm=minimal?embedded=true" frameborder="0"></iframe>
     </div>
-
 
     <script type=”text/javascript”>try{new TimeKit('#my-video');}catch(e){}</script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
     <!-- My JS -->
     <script src="scripts/main.js"></script>
   </body>
